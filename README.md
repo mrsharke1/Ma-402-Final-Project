@@ -4,7 +4,7 @@ This project uses AI to translate C code to python, by implementing PETSc and pe
 
   * Chosen problem EX 3.c The heat equation https://petsc.org/main/src/ts/tutorials/ex3.c.html
 ## Project Components:
-  * README.md : breif overview of the problem and a reflection on the project
+  * README.md : brief overview of the problem and a reflection on the project
   * tutorial_model.py: Full AI translated code
   * tutorial_presentation.jpynb : Jupyter Notebook that imports my module, runs the simulation, and visualizes the results.
   * Docs Markdown Files for the three docstrings
