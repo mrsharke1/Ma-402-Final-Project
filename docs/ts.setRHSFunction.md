@@ -1,5 +1,5 @@
-##ts.setRHSFunction()
-###What Does the Function Do?
+## ts.setRHSFunction()
+### What Does the Function Do?
 To start, note that TS is kind of like the family for the function. It stands for Time Stepping, and 
 is used for solving differential equations. Essentially it manages the time integration. It is what allows the simulation to take little steps throughout time.
 It is a step by step approach for the time variable, where each step is a different moment in time. This specific function
@@ -22,7 +22,7 @@ In the `petsc4py` source code (`src/petsc4py/PETSc/TS.pyx`), the Python method `
 * **C Implementation:** [src/ts/interface/ts.c](https://gitlab.com/petsc/petsc/-/blob/main/src/ts/interface/ts.c)
 * **C Header:** [include/petscts.h](https://gitlab.com/petsc/petsc/-/blob/main/include/petscts.h)
 
-### Minimal Working Example (MWE)
+### Minimal Working Example
 ```python
 def my_heat_rhs(ts, t, u, f):
     # Compute du/dt = A * u
