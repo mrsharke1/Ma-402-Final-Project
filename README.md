@@ -4,13 +4,13 @@ This project uses AI to translate C code to python, by implementing PETSc and pe
 
   * Chosen problem EX 3.c The heat equation https://petsc.org/main/src/ts/tutorials/ex3.c.html
 ## Project Components:
-  * README.md : brief overview of the problem and a reflection on the project
-  * tutorial_model.py: Full AI translated code
-  * tutorial_presentation.jpynb : Jupyter Notebook that imports my module, runs the simulation, and visualizes the results.
+  * **[README](./README.md )**: brief overview of the problem and a reflection on the project
+  * **[Tutorial Model](./tutorial_model.py)**: Full AI translated code
+  * **[Tutorial Presentation](./tutorial_presentation.jpynb)** : Jupyter Notebook that imports my module, runs the simulation, and visualizes the results.
   * Docs Markdown Files for the three docstrings
-     * File 1
-     * file 2
-     * file 3
+     * **[ts.setRHSFunction](./ts.setRHSFunction.md)**
+     * **[ts.setRHSJacobian](./ts.setRHSJacobian.md)**
+     * **[ts.solve](./ts.solve.md)**
 
 ## Project Reflection
 This project was very challenging. Getting VS Code to run the petsc4py library was challenging and time consuming. I had to access the windows powershell to download Linux Subsytem for Windows, to then upload that to VS code, and more steps to get the code to run. Once I got it working I uploaded my selected problem, 3c the heat equation, into chatGPT for it to translate into usable python script. Luckily there was very little debugging required as I have little experience with python prior to this class. To be candid, it was hard to understand if the code was working properly due to my lack of experience in python. However, it returned an output, so I consider that a sucess. COMEBACKTO THIS MEGAN AND FINISH ITTTTTT 
