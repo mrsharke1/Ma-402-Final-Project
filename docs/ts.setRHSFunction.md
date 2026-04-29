@@ -29,7 +29,7 @@ In the `petsc4py` source code (`src/petsc4py/PETSc/TS.pyx`), the Python method `
 
 ### Minimal Working Example
 ```python
-# 'f' (Routine): The physics function calculating the discrete Laplacian
+# 'f' (Routine): The function calculating the discrete Laplacian
 def my_heat_rhs(ts, t, u, f):
     """
     ts: The TS solver context
@@ -43,4 +43,4 @@ def my_heat_rhs(ts, t, u, f):
 
 # 'ts': The TS context created via PETSc.TS().create()
 # Registering the function:
-ts.setRHSFunction(my_heat_rhs)```
+ts.setRHSFunction(my_heat_rhs)
