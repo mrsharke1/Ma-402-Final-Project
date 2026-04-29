@@ -16,19 +16,31 @@ In the `petsc4py` source code (`src/petsc4py/PETSc/TS.pyx`), the Python method `
 
 | Parameter | Python Type | C Type | Description (from C Source) |
 | :--- | :--- | :--- | :--- |
-| **ts** | `PETSc.TS` | `TS` | The Time-Stepping context (the solver object). |
-| **function** | `callable` | `TSRHSFunctionFn*` | The user-defined routine for evaluating the RHS function $f(t,u)$. |
-| **f** | `PETSc.Vec` | `Vec` | Vector used to store the computed RHS results (internal workspace). |
-| **args** | `tuple` | `PetscCtx` | Optional positional arguments passed into the physics function. |
-| **kargs** | `dict` | `PetscCtx` | Optional keyword arguments passed into the physics function. |
+| **ts** | `PETSc.TS` | `TS` | The Time-Stepping context (the solver object). Obtained from TSCreate() |
+| **function** | `callable` | `TSRHSFunctionFn*` | The RHS function $f(t,u)$. |
+| **f** | `PETSc.Vec` | `Vec` | Vector used to store the computed RHS results (internal workspace) routine for evaluating right hand side function. |
+| **args** | `tuple` | `PetscCtx` | Optional positional arguments for function. |
+| **kargs** | `dict` | `PetscCtx` | Optional keyword arguments for function. |
+| **r** | `f` (Vector) | `Vec` | Vector to put the computed right-hand side (or `NULL` to have it created). |
+| **ctx** | `args` / `kargs` | `PetscCtx` | [optional] User-defined context for private data for the function evaluation routine. |
 ### Source Links
 * **C Implementation:** [src/ts/interface/ts.c]( https://gitlab.com/petsc/petsc/-/blob/main/src/ts/interface/ts.c?ref_type=heads#L1003)
 * **C Header:** [include/petscts.h](https://gitlab.com/petsc/petsc/-/blob/main/include/petscts.h)
 
 ### Minimal Working Example
 ```python
+# 'f' (Routine): The physics function calculating the discrete Laplacian
 def my_heat_rhs(ts, t, u, f):
-    # Compute du/dt = A * u
+    """
+    ts: The TS solver context
+    t:  The current time step
+    u:  The current solution state (input)
+    f:  The vector 'r' where the RHS result is stored (output)
+    """
+    # Compute du/dt = A * u (where A is the system matrix)
+    # This modifies 'f' in-place as required by the C API
     model.A.mult(u, f)
 
+# 'ts': The TS context created via PETSc.TS().create()
+# Registering the function:
 ts.setRHSFunction(my_heat_rhs)
