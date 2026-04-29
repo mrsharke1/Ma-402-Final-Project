@@ -6,7 +6,7 @@ This project uses AI to translate C code to python, by implementing PETSc and pe
 ## Project Components:
   * **[Home Page](./README.md)**: brief overview of the problem and a reflection on the project
   * **[Tutorial Model](./tutorial_model.py)**: Full AI translated code
-  * **[Tutorial Presentation](./tutorial_presentation.jpynb)** : Jupyter Notebook that imports my module, runs the simulation, and visualizes the results.
+  * **[Tutorial Presentation](./tutorial__presentation.ipynb)** : Jupyter Notebook that imports my module, runs the simulation, and visualizes the results.
   * Docs Markdown Files for the three docstrings
      * **[ts.setRHSFunction](./ts.setRHSFunction.md)**
      * **[ts.setRHSJacobian](./ts.setRHSJacobian.md)**
