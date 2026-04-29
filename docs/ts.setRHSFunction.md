@@ -43,4 +43,4 @@ def my_heat_rhs(ts, t, u, f):
 
 # 'ts': The TS context created via PETSc.TS().create()
 # Registering the function:
-ts.setRHSFunction(my_heat_rhs)
+ts.setRHSFunction(my_heat_rhs)```
