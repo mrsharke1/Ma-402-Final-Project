@@ -25,7 +25,7 @@ In the `petsc4py` source code (`src/petsc4py/PETSc/TS.pyx`), the Python method `
 | **ctx** | `args` / `kargs` | `PetscCtx` | [optional] User-defined context for private data for the function evaluation routine. |
 ### Source Links
 * **C Implementation:** [src/ts/interface/ts.c]( https://gitlab.com/petsc/petsc/-/blob/main/src/ts/interface/ts.c?ref_type=heads#L1003)
-* **C Header:** [include/petscts.h](https://gitlab.com/petsc/petsc/-/blob/main/include/petscts.h)
+* **C Header:** [include/petscts.h](https://gitlab.com/petsc/petsc/-/blob/main/include/petscts.h#L608)
 
 ### Minimal Working Example
 ```python
